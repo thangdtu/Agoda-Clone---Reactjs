@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
-import styles from './Sidebar.module.scss';
+import styles from './Navbar.module.scss';
 import Menu, { MenuItem } from './Menu';
 import config from '~/config';
 import { AparmentIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
-function Sidebar() {
+function Navbar() {
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -21,4 +21,4 @@ function Sidebar() {
     );
 }
 
-export default Sidebar;
+export default Navbar;
