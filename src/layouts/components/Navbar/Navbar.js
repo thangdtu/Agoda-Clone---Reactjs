@@ -3,10 +3,21 @@ import styles from './Navbar.module.scss';
 import Menu, { MenuItem } from './Menu';
 import config from '~/config';
 import { AparmentIcon } from '~/components/Icons';
+import MenuPoper from '~/components/Popper/Menu/MenuPopper';
 
 const cx = classNames.bind(styles);
 
 function Navbar() {
+    const userMenu = [
+        {
+            title: 'Taxi sân bay',
+            to: '/Taxi',
+        },
+        {
+            title: 'Thuê xe',
+            to: '/carrental',
+        },
+    ];
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -17,6 +28,9 @@ function Navbar() {
                 <MenuItem title="Căn hộ" to={config.routes.apartment} icon={<AparmentIcon />} />
                 <MenuItem title="Hoạt động" to={config.routes.activate} />
             </Menu>
+            <MenuPoper items={userMenu}>
+                <div className={cx('action-btn')}>...</div>
+            </MenuPoper>
         </aside>
     );
 }

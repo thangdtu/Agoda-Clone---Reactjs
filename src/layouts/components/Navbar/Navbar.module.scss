@@ -1,4 +1,14 @@
 .wrapper {
     width: 100%;
     padding-left: 24px;
+    display: flex;
+}
+.action-btn {
+    position: relative;
+    display: flex;
+    font-size: 14px;
+    color: #161823;
+    background-color: transparent;
+    padding: 4px 10px;
+    cursor: pointer;
 }

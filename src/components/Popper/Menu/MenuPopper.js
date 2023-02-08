@@ -3,16 +3,16 @@ import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import MenuItem from './MenuItem';
+import MenuItemPoper from './MenuItemPopper';
 import Header from './Header';
-import styles from './Menu.module.scss';
+import styles from './MenuPopper.module.scss';
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
+function MenuPoper({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -21,7 +21,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             const isParent = !!item.children;
 
             return (
-                <MenuItem
+                <MenuItemPoper
                     key={index}
                     data={item}
                     onClick={() => {
@@ -69,11 +69,11 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
     );
 }
 
-Menu.propTypes = {
+MenuPoper.propTypes = {
     children: PropTypes.node.isRequired,
     items: PropTypes.array,
     hideOnClick: PropTypes.bool,
     onChange: PropTypes.func,
 };
 
-export default Menu;
+export default MenuPoper;
